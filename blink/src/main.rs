@@ -1,14 +1,15 @@
 #![no_main]
 #![no_std]
+#![allow(deprecated)]
 
 #[allow(unused)]
 use panic_halt;
 
+use hal::{delay::Delay, prelude::*, stm32};
 use stm32f0xx_hal as hal;
-use crate::hal::{prelude::*, stm32, delay::Delay};
 
-use cortex_m_rt::entry;
 use cortex_m::peripheral::Peripherals;
+use cortex_m_rt::entry;
 
 #[entry]
 fn main() -> ! {
@@ -16,10 +17,13 @@ fn main() -> ! {
     let core_peripherals = Peripherals::take().unwrap();
 
     // configure the clock (rcc = 'reset clock control')
-    let mut rcc = peripherals.RCC.configure().sysclk(8.mhz()).freeze(&mut peripherals.FLASH);
+    let mut rcc = peripherals
+        .RCC
+        .configure()
+        .sysclk(8.mhz())
+        .freeze(&mut peripherals.FLASH);
     let mut delay = Delay::new(core_peripherals.SYST, &rcc);
 
-    let gpioa = peripherals.GPIOA.split(&mut rcc);
     let gpiob = peripherals.GPIOB.split(&mut rcc);
 
     let mut led = cortex_m::interrupt::free(|critical_section| {
