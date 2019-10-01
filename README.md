@@ -1,5 +1,13 @@
 # Flipdot Badge Software examples
 
+## Source
+
+This repository lives in the flipdot organization on GitHub. Clone it with
+
+```
+git clone https://github.com/flipdot/0xA-badge-rust
+```
+
 ## Toolchain Setup
 
 1. Install a Rust toolchain

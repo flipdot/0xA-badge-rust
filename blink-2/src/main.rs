@@ -2,8 +2,7 @@
 #![no_std]
 #![allow(deprecated)]
 
-#[allow(unused)]
-use panic_halt;
+use panic_halt as _;
 
 use hal::{delay::Delay, prelude::*, stm32};
 use stm32f0xx_hal as hal;
