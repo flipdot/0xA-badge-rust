@@ -5,7 +5,6 @@
 #[allow(unused)]
 use panic_halt;
 
-a
 use hal::{delay::Delay, prelude::*, stm32};
 use stm32f0xx_hal as hal;
 
