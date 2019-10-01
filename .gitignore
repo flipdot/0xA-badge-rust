@@ -1,4 +1,5 @@
-**/*.rs.bk
+*.rs.bk
+*.bin
 .#*
 .gdb_history
 Cargo.lock
