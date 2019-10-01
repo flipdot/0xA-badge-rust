@@ -1,5 +1,5 @@
 [workspace]
-members = ["blink-2"]
+members = ["blink-2", "usb-serial"]
 
 [profile.release]
 codegen-units = 1 # better optimizations
