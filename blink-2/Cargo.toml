@@ -2,7 +2,7 @@
 authors = ["anuejn"]
 edition = "2018"
 readme = "README.md"
-name = "blink"
+name = "blink-2"
 version = "0.1.0"
 
 [dependencies]
@@ -15,6 +15,6 @@ stm32f0xx-hal = {version = "0.15.1", features = ["stm32f042"]}
 
 # this lets you use `cargo fix`!
 [[bin]]
-name = "blink"
+name = "blink-2"
 test = false
 bench = false

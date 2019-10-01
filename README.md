@@ -13,25 +13,18 @@
 4. Install dfu-util
    * Linux: install the package `dfu-util` with your favorite package manager
    * MacOS: `brew install dfu-util`
-   * Windows: <http://dfu-util.sourceforge.net/releases/dfu-util-0.9-win64.zip>
+   * Windows
+     1. Download from <http://dfu-util.sourceforge.net/releases/dfu-util-0.9-win64.zip>
+     2. Put `dfu-util.exe` and `libusb-1.0.dll` into this directory.
 
-## Build the first example
-
-```
-cd blink
-# Automatically builds the project (like cargo build),
-# then extracts a flashable binary from the ELF build output
-cargo objcopy --bin blink --release -- -O binary blink.bin
-```
-
-## Flash the example
+## Build, flash and run the first example
 
 1. Connect the badge to your computer
 2. Put the badge in DFU bootloader mode
    1. Press and hold both buttons on the badge
    2. Release the reset button
    3. Release the DFU button
-3. Flash the binary (run command in blink directory)
-   * Linux & MacOS: `sudo dfu-util -a0 --dfuse-address 0x08000000 -D blink.bin`
-   * Windows: `dfu-util.exe -a0 --dfuse-address 0x08000000 -D blink.bin`
-4. Press and release the reset button to run the program
+3. Build and flash
+   * Linux & MacOS: `./build-flash.sh blink-1`
+   * Windows: `build-flash.bat blink-1`
+4. Press and release the reset button to run the example on the badge
