@@ -16,7 +16,7 @@ cargo_exit_status=$?
 
 echo
 echo -e "\033[1m====== Flashing ======\033[0m"
-sudo dfu-util -a0 --dfuse-address 0x08000000 -D "$app.bin"
+sudo dfu-util -i0 -a0 --dfuse-address 0x08000000 -D "$app.bin"
 
 if [[ $? == 74 ]]; then
     echo
