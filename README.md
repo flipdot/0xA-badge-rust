@@ -33,6 +33,6 @@ git clone https://github.com/flipdot/0xA-badge-rust
    2. Release the reset button
    3. Release the DFU button
 3. Build and flash
-   * Linux & MacOS: `./build-flash.sh blink-1`
-   * Windows: `build-flash.bat blink-1`
+   * Linux & MacOS: `./build-flash.sh blink`
+   * Windows: `build-flash.bat blink`
 4. Press and release the reset button to run the example on the badge
