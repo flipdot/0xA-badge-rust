@@ -2,7 +2,7 @@
 authors = ["anuejn"]
 edition = "2018"
 readme = "README.md"
-name = "blink-2"
+name = "blink"
 version = "0.1.0"
 
 [dependencies]
@@ -13,8 +13,9 @@ panic-halt = "0.2.0"
 embedded-hal = "0.2.3"
 stm32f0xx-hal = {version = "0.15.1", features = ["stm32f042"]}
 
-# this lets you use `cargo fix`!
+# Disable some stuff that doesn't work for embedded projects.
+# Some tools (IDE etc.) will report irrelevant errors otherwise.
 [[bin]]
-name = "blink-2"
+name = "blink"
 test = false
 bench = false

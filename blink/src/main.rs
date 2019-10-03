@@ -1,5 +1,7 @@
 #![no_main]
 #![no_std]
+// We're using a slightly outdated API, because the new one is not yet
+// implemented for the board we are targeting.
 #![allow(deprecated)]
 
 use panic_halt as _;

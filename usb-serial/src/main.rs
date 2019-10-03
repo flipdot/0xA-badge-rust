@@ -1,6 +1,9 @@
 //! CDC-ACM serial port example using polling in a busy loop.
 #![no_std]
 #![no_main]
+// We're using a slightly outdated API, because the new one is not yet
+// implemented for the board we are targeting.
+#![allow(deprecated)]
 
 use panic_halt as _;
 
@@ -32,9 +35,7 @@ fn main() -> ! {
 
     // Configure the on-board LED (LD3, green)
     let gpiob = dp.GPIOB.split(&mut rcc);
-    let mut led = cortex_m::interrupt::free(|cs| {
-        gpiob.pb1.into_push_pull_output(cs)
-    });
+    let mut led = cortex_m::interrupt::free(|cs| gpiob.pb1.into_push_pull_output(cs));
     led.set_low(); // Turn off
 
     let gpioa = dp.GPIOA.split(&mut rcc);
@@ -76,8 +77,8 @@ fn main() -> ! {
                     match serial.write(&buf[write_offset..count]) {
                         Ok(len) if len > 0 => {
                             write_offset += len;
-                        },
-                        _ => {},
+                        }
+                        _ => {}
                     }
                 }
             }

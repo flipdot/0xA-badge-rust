@@ -13,3 +13,10 @@ usb-device = "0.2.3"
 usbd-serial = "0.1"
 stm32-usbd = { version = "0.4.0", features = ["stm32f042xx"] }
 panic-halt = "0.2.0"
+
+# Disable some stuff that doesn't work for embedded projects.
+# Some tools (IDE etc.) will report irrelevant errors otherwise.
+[[bin]]
+name = "usb-serial"
+test = false
+bench = false
