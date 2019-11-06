@@ -10,9 +10,6 @@ git clone https://github.com/flipdot/0xA-badge-rust
 
 ## Toolchain Setup
 
-0. If you're in flipdot's `security-by-obscurity` network, instruct rustup to use the local mirror
-   in the same terminal session you run the following commands in:
-   `export RUSTUP_DIST_SERVER='http://datengrab.fd/rustup'`
 1. Install a Rust toolchain
    * Arch Linux: install `rustup` with pacman, then run `rustup default stable`
    * Other Linux: `curl https://sh.rustup.rs | sh`
